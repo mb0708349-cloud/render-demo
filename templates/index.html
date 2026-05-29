@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DNA Disease Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>🧬 DNA Disease Prediction</h1>
+
+            <p class="subtitle">
+                AI-powered disease prediction using Deep Learning and Genomics
+            </p>
+
+            <form method="POST">
+
+                <label>Enter DNA Sequence</label>
+
+                <textarea
+                    name="sequence"
+                    placeholder="Example: ATCGTAGCTAGCTAGCTA..."
+                    required></textarea>
+
+                <button type="submit">
+
+                    Predict Disease
+
+                </button>
+
+            </form>
+
+            {% if result %}
+
+            <div class="result-box">
+
+                <h2>Prediction Result</h2>
+
+                <p>{{ result }}</p>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
